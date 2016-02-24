@@ -1,2 +1,2 @@
 # docker-phalcon-website
-Docker image for phalcon carqualifier website
+Docker image for phalcon framework with php and nginx
