@@ -16,7 +16,8 @@ RUN \
   	php-pecl-jsonc-devel \
   	php-pecl-zip \
   	php-phalcon2 \
-  	php-process
+  	php-process && \
+  yum clean all
 
 EXPOSE 80
 EXPOSE 443
