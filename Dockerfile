@@ -1,6 +1,9 @@
 FROM carqualifier/docker-nginx-php:php56
 MAINTAINER Faruk Brbovic <fbrbovic@carqualifier.com>
 
+ADD ./container-files/aerospike-client-php-3.3.15.tar.gz /tmp/
+ADD ./container-files/aerospike.ini /etc/php.d/20-aerospike.ini
+
 RUN \
   rpm --rebuilddb && yum update -y && \
 
@@ -16,8 +19,16 @@ RUN \
   	php-pecl-jsonc-devel \
   	php-pecl-zip \
   	php-phalcon2 \
-  	php-process && \
-  yum clean all
+  	php-process \
+    @development \
+    openssl-devel \
+    lua-devel && \
+  yum clean all && \
+  cd /tmp/aerospike-client-php-3.3.15/src/aerospike && \
+  ./build.sh && \
+  make install && \
+  chmod 644 /etc/php.d/20-aerospike.ini
+
 
 EXPOSE 80
 EXPOSE 443
