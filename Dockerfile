@@ -27,8 +27,6 @@ RUN \
   cd /tmp/aerospike-client-php-3.3.15/src/aerospike && \
   ./build.sh && \
   make install && \
-  chmod 644 /etc/php.d/20-aerospike.ini
-
-
-EXPOSE 80
-EXPOSE 443
+  chmod 644 /etc/php.d/20-aerospike.ini && \
+  yes '' | pecl install -f mongo && \
+  echo "extension=mongo.so" >> /etc/php.ini
