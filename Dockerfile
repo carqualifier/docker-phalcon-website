@@ -31,4 +31,4 @@ RUN \
   echo "extension=mongo.so" >> /etc/php.ini && \
   git clone --depth=1 git://github.com/phalcon/cphalcon.git && \
   cd cphalcon/build && ./install && \
-  echo "extension=phalcon.so" >> /etc/php.ini
+  echo "extension=phalcon.so" >> /etc/php.d/50-phalcon.ini
