@@ -30,6 +30,5 @@ RUN \
   yes '' | pecl install -f mongo && \
   echo "extension=mongo.so" >> /etc/php.ini && \
   git clone --depth=1 git://github.com/phalcon/cphalcon.git && \
-  cd cphalcon/build && \
+  cd cphalcon/build && ./install && \
   echo "extension=phalcon.so" >> /etc/php.ini
-  sudo ./install
