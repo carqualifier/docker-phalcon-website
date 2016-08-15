@@ -18,7 +18,6 @@ RUN \
   	php-pecl-jsonc \
   	php-pecl-jsonc-devel \
   	php-pecl-zip \
-  	php-phalcon2 \
   	php-process \
     @development \
     openssl-devel \
@@ -29,4 +28,8 @@ RUN \
   make install && \
   chmod 644 /etc/php.d/20-aerospike.ini && \
   yes '' | pecl install -f mongo && \
-  echo "extension=mongo.so" >> /etc/php.ini
+  echo "extension=mongo.so" >> /etc/php.ini && \
+  git clone --depth=1 git://github.com/phalcon/cphalcon.git && \
+  cd cphalcon/build && \
+  echo "extension=phalcon.so" >> /etc/php.ini
+  sudo ./install
