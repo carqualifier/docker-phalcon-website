@@ -5,7 +5,7 @@ read gpgKeyPath
 
 mkdir -p /gpg_keys
 
-aws s3 cp --recursive s3://$AWS_BUCKET_NAME/$gpgKeyPath /gpg_keys/.
+aws s3 cp s3://$AWS_BUCKET_NAME/$gpgKeyPath /gpg_keys/.
 if [ ! "$(ls -A /gpg_keys)" ]; then
    echo "Unable to retrieve file"
    exit 1;
