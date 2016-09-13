@@ -31,7 +31,7 @@ RUN \
   make install && \
   chmod 644 /etc/php.d/20-aerospike.ini && \
   yes '' | pecl install -f mongo && \
-  echo "extension=mongo.so" >> /etc/php.ini && \
+  echo "extension=mongo.so" >> /etc/php.d/30-mongo.ini && \
   wget https://bootstrap.pypa.io/get-pip.py && \
   python get-pip.py && \
   pip install awscli && \
