@@ -8,17 +8,6 @@ RUN \
   rpm --rebuilddb && yum update -y && \
 
   yum install -y \
-	php-common \
-  	php-xml \
-  	php-pear \
-  	php-mysqlnd \
-  	php-devel \
-  	php-soap \
-  	php-pecl-igbinary \
-  	php-pecl-jsonc \
-  	php-pecl-jsonc-devel \
-  	php-pecl-zip \
-  	php-process \
     @development \
     openssl-devel \
     lua-devel && \
