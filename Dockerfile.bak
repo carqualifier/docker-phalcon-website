@@ -8,6 +8,8 @@ RUN \
   rpm --rebuilddb && yum update -y && \
 
   yum install -y \
+    php70-php-xml \
+    php70-php-soap \
     @development \
     openssl-devel \
     lua-devel && \

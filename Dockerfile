@@ -4,7 +4,6 @@ MAINTAINER Faruk Brbovic <fbrbovic@carqualifier.com>, Eidher Escalona <eescalona
 ADD ./container-files/aerospike-client-php-3.3.15.tar.gz /tmp/
 ADD ./container-files/aerospike.ini /etc/php.d/20-aerospike.ini
 
-RUN  rpm --rebuilddb && yum update -y
 RUN  yum install -y  @development  openssl-devel  lua-devel
 RUN  yum clean all
 RUN   cd /tmp/aerospike-client-php-3.3.15/src/aerospike && \
