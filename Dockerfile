@@ -5,11 +5,9 @@ ADD ./container-files/aerospike.ini /etc/php.d/20-aerospike.ini
 
 RUN \
     yum install -y \
-    @development \
-    openssl-devel \
-    lua-devel \
-    php-devel \
-    php-pear && \
+    @development \ 
+    openssl-devel && \
+    export PATH=$PATH:/opt/remi/php70/root/usr/bin:/opt/remi/php70/root/usr/sbin:/opt/remi/php70/root/usr/bin:/opt/remi/php70/root/usr/sbin && \
     cd /tmp/aerospike-client-php-3.4.14/src/aerospike && \
     ./build.sh && \
     make install && \
