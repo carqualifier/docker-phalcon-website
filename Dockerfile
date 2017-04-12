@@ -8,8 +8,7 @@ RUN \
     @development \
     openssl-devel \
     lua-devel && \
-    yum clean all && \
-    yum install -y php70-php-devel \
+    php70-php-devel && \
     cd /tmp/aerospike-client-php-3.4.14/src/aerospike && \
     ./build.sh && \
     make install && \
